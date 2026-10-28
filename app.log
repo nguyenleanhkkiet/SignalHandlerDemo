@@ -1,0 +1,57 @@
+2026-10-28 08:35:57.183 [INFO] [pid=26] Ung dung khoi dong
+2026-10-28 08:35:57.185 [INFO] [pid=26] Nguoi dung chon Task 1
+2026-10-28 08:35:57.190 [INFO] [pid=26] Parent tao child pid=27 cho tac vu 'Task 1 - Nen tang fork/parent-child va logger'
+2026-10-28 08:35:57.190 [INFO] [pid=27] Child bat dau tac vu 'Task 1 - Nen tang fork/parent-child va logger'
+2026-10-28 08:35:57.193 [INFO] [pid=27] Task 1 demo dang chay trong child pid=27, parent pid=26
+2026-10-28 08:35:57.196 [INFO] [pid=27] Child ket thuc tac vu 'Task 1 - Nen tang fork/parent-child va logger' voi ma 0
+2026-10-28 08:35:57.201 [INFO] [pid=26] Parent thu duoc exit=0 tu child pid=27
+2026-10-28 08:35:57.204 [INFO] [pid=26] Nguoi dung chon muc Task 2 chua trien khai
+2026-10-28 08:35:57.207 [INFO] [pid=26] Ung dung ket thuc
+2026-10-28 09:02:55.395 [INFO] [pid=24] Ung dung khoi dong
+2026-10-28 09:02:55.397 [INFO] [pid=24] Nguoi dung chon Task 1
+2026-10-28 09:02:55.399 [INFO] [pid=24] Parent tao child pid=25 cho tac vu 'Task 1 - Nen tang fork/parent-child va logger'
+2026-10-28 09:02:55.399 [INFO] [pid=25] Child bat dau tac vu 'Task 1 - Nen tang fork/parent-child va logger'
+2026-10-28 09:02:55.412 [INFO] [pid=25] Task 1 demo dang chay trong child pid=25, parent pid=24
+2026-10-28 09:02:55.412 [INFO] [pid=25] Child ket thuc tac vu 'Task 1 - Nen tang fork/parent-child va logger' voi ma 0
+2026-10-28 09:02:55.414 [INFO] [pid=24] Parent thu duoc exit=0 tu child pid=25
+2026-10-28 09:02:55.415 [INFO] [pid=24] Nguoi dung chon muc Task 2 chua trien khai
+2026-10-28 09:02:55.416 [INFO] [pid=24] Ung dung ket thuc
+2026-10-28 09:03:10.063 [INFO] [pid=4] Ung dung khoi dong
+2026-10-28 09:03:10.064 [INFO] [pid=4] Ung dung ket thuc
+2026-10-28 09:03:10.080 [INFO] [pid=6] Ung dung khoi dong
+2026-10-28 09:03:10.083 [INFO] [pid=6] Ung dung ket thuc
+2026-10-28 09:04:06.853 [INFO] [pid=4] Ung dung khoi dong
+2026-10-28 09:04:06.854 [INFO] [pid=4] Nguoi dung chon Task 1
+2026-10-28 09:04:06.855 [INFO] [pid=4] Parent tao child pid=5 cho tac vu 'Task 1 - Nen tang fork/parent-child va logger'
+2026-10-28 09:04:06.856 [INFO] [pid=5] Child bat dau tac vu 'Task 1 - Nen tang fork/parent-child va logger'
+2026-10-28 09:04:06.858 [INFO] [pid=5] Task 1 demo dang chay trong child pid=5, parent pid=4
+2026-10-28 09:04:06.859 [INFO] [pid=5] Child ket thuc tac vu 'Task 1 - Nen tang fork/parent-child va logger' voi ma 0
+2026-10-28 09:04:06.861 [INFO] [pid=4] Parent thu duoc exit=0 tu child pid=5
+2026-10-28 09:04:06.862 [INFO] [pid=4] Nguoi dung chon muc Task 2 chua trien khai
+2026-10-28 09:04:06.863 [INFO] [pid=4] Ung dung ket thuc
+2026-10-28 09:04:06.873 [INFO] [pid=8] Ung dung khoi dong
+2026-10-28 09:04:06.874 [INFO] [pid=8] Ung dung ket thuc
+2026-10-28 09:04:06.883 [INFO] [pid=10] Ung dung khoi dong
+2026-10-28 09:04:06.884 [INFO] [pid=10] Ung dung ket thuc
+2026-10-28 09:12:40.624 [INFO] [pid=15799] Ung dung khoi dong
+2026-10-28 09:17:37.131 [INFO] [pid=16170] Ung dung khoi dong
+2026-10-28 09:17:46.859 [INFO] [pid=16170] Nguoi dung chon Task 1
+2026-10-28 09:17:46.861 [INFO] [pid=16170] Parent tao child pid=16178 cho tac vu 'Task 1 - Nen tang fork/parent-child va logger'
+2026-10-28 09:17:46.861 [INFO] [pid=16178] Child bat dau tac vu 'Task 1 - Nen tang fork/parent-child va logger'
+2026-10-28 09:17:46.864 [INFO] [pid=16178] Task 1 demo dang chay trong child pid=16178, parent pid=16170
+2026-10-28 09:17:46.866 [INFO] [pid=16178] Child ket thuc tac vu 'Task 1 - Nen tang fork/parent-child va logger' voi ma 0
+2026-10-28 09:17:46.867 [INFO] [pid=16170] Parent thu duoc exit=0 tu child pid=16178
+2026-10-28 09:28:10.170 [INFO] [pid=16787] Ung dung khoi dong
+2026-10-28 09:28:13.633 [INFO] [pid=16787] Nguoi dung chon Task 1
+2026-10-28 09:28:13.635 [INFO] [pid=16787] Parent tao child pid=16806 cho tac vu 'Task 1 - Nen tang fork/parent-child va logger'
+2026-10-28 09:28:13.635 [INFO] [pid=16806] Child bat dau tac vu 'Task 1 - Nen tang fork/parent-child va logger'
+2026-10-28 09:28:13.638 [INFO] [pid=16806] Task 1 demo dang chay trong child pid=16806, parent pid=16787
+2026-10-28 09:28:13.639 [INFO] [pid=16806] Child ket thuc tac vu 'Task 1 - Nen tang fork/parent-child va logger' voi ma 0
+2026-10-28 09:28:13.640 [INFO] [pid=16787] Parent thu duoc exit=0 tu child pid=16806
+2026-10-28 09:28:20.059 [INFO] [pid=16787] Nguoi dung chon Task 1
+2026-10-28 09:28:20.060 [INFO] [pid=16787] Parent tao child pid=16815 cho tac vu 'Task 1 - Nen tang fork/parent-child va logger'
+2026-10-28 09:28:20.060 [INFO] [pid=16815] Child bat dau tac vu 'Task 1 - Nen tang fork/parent-child va logger'
+2026-10-28 09:28:20.063 [INFO] [pid=16815] Task 1 demo dang chay trong child pid=16815, parent pid=16787
+2026-10-28 09:28:20.064 [INFO] [pid=16815] Child ket thuc tac vu 'Task 1 - Nen tang fork/parent-child va logger' voi ma 0
+2026-10-28 09:28:20.066 [INFO] [pid=16787] Parent thu duoc exit=0 tu child pid=16815
+2026-10-28 09:28:39.794 [INFO] [pid=16787] Ung dung ket thuc

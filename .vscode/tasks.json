@@ -1,0 +1,45 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build (WSL)",
+      "type": "process",
+      "command": "wsl.exe",
+      "args": [
+        "bash",
+        "-lc",
+        "cd /mnt/d/java/LTHT && make"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "dedicated",
+        "showReuseMessage": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Demo (WSL)",
+      "type": "process",
+      "command": "wsl.exe",
+      "args": [
+        "bash",
+        "-lc",
+        "cd /mnt/d/java/LTHT && make && exec ./build/signal-handler-demo"
+      ],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "dedicated",
+        "showReuseMessage": false
+      },
+      "problemMatcher": []
+    }
+  ]
+}
