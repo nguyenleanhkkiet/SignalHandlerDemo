@@ -13,5 +13,6 @@ typedef struct {
 const project_task_t *tasks_get(size_t *count);
 int task1_process_demo(void);
 int task2_signal_demo(void);
+int task3_sigaction_demo(void);
 
 #endif

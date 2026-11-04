@@ -6,7 +6,7 @@ LDFLAGS ?=
 
 BUILD_DIR := build
 TARGET   := $(BUILD_DIR)/signal-handler-demo
-SOURCES  := src/main.c src/logger.c src/process_manager.c src/menu.c src/tasks.c src/task2_signal.c
+SOURCES  := src/main.c src/logger.c src/process_manager.c src/menu.c src/tasks.c src/task2_signal.c src/task3_sigaction.c
 OBJECTS  := $(SOURCES:src/%.c=$(BUILD_DIR)/%.o)
 DEPFILES := $(OBJECTS:.o=.d)
 
