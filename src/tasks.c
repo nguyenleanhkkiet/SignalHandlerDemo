@@ -16,7 +16,7 @@ const project_task_t *tasks_get(size_t *count)
 {
     static const project_task_t tasks[] = {
         {1, "Task 1 - Nen tang fork/parent-child va logger", task1_process_demo},
-        {2, "Task 2 - Cho tich hop", NULL},
+        {2, "Task 2 - Basic Signal Handling using signal()", task2_signal_demo},
         {3, "Task 3 - Cho tich hop", NULL},
         {4, "Task 4 - Cho tich hop", NULL}
     };
