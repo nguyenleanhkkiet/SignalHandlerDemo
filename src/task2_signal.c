@@ -1,5 +1,6 @@
 #include "task2_signal.h"
 #include "logger.h"
+#include "ui_theme.h"
 
 #include <errno.h>
 #include <signal.h>
@@ -647,9 +648,11 @@ static void explain_signal_limitations(void)
 
 int task2_signal_demo(void)
 {
-    puts("\n==================================================");
-    puts("   BAT DAU TASK 2: BASIC SIGNAL HANDLING (signal)  ");
-    puts("==================================================");
+    puts("");
+    puts("==========================================================================");
+    printf("        %s%sBAT DAU TASK 2: BASIC SIGNAL HANDLING (signal)%s              \n",
+           ui_color_bold(), ui_color_cyan(), ui_color_reset());
+    puts("==========================================================================");
     fflush(stdout);
 
     /*

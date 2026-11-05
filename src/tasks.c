@@ -1,13 +1,16 @@
 #include "tasks.h"
 #include "logger.h"
+#include "ui_theme.h"
 
 #include <stdio.h>
 #include <unistd.h>
 
 int task1_process_demo(void)
 {
-    printf("[Child %ld] Task 1: minh hoa tien trinh con duoc tao bang fork().\n", (long)getpid());
-    printf("[Child %ld] PID cua tien trinh cha: %ld.\n", (long)getpid(), (long)getppid());
+    printf("%s[PROCESS]%s [Child %ld] Task 1: minh hoa tien trinh con duoc tao bang fork().\n",
+           ui_color_blue(), ui_color_reset(), (long)getpid());
+    printf("%s[PROCESS]%s [Child %ld] PID cua tien trinh cha (PPID): %ld.\n",
+           ui_color_blue(), ui_color_reset(), (long)getpid(), (long)getppid());
     logger_info("Task 1 demo dang chay trong child pid=%ld, parent pid=%ld", (long)getpid(), (long)getppid());
     return 0;
 }

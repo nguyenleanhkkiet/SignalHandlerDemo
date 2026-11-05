@@ -1,5 +1,6 @@
 #include "process_manager.h"
 #include "logger.h"
+#include "ui_theme.h"
 
 #include <errno.h>
 #include <stdio.h>
@@ -35,7 +36,8 @@ int process_run_child(const char *label, task_callback_fn task,
     }
 
     (void)logger_info("Parent tao child pid=%ld cho tac vu '%s'", (long)child, label);
-    printf("[Parent %ld] Da tao child %ld; dang cho ket qua...\n", (long)getpid(), (long)child);
+    printf("%s[PROCESS]%s Parent (PID: %ld) -> Da tao Child (PID: %ld); dang cho ket qua...\n",
+           ui_color_blue(), ui_color_reset(), (long)getpid(), (long)child);
     int status;
     pid_t waited;
     do {
@@ -55,7 +57,13 @@ int process_run_child(const char *label, task_callback_fn task,
         result->kind = PROCESS_RESULT_EXITED;
         result->exit_code = code;
         result->terminating_signal = 0;
-        printf("[Parent %ld] Child %ld ket thuc, exit=%d.\n", (long)getpid(), (long)child, code);
+        if (code == 0) {
+            printf("%s[SUCCESS]%s Parent (PID: %ld) <- Child (PID: %ld) hoan tat, exit=%d.\n",
+                   ui_color_green(), ui_color_reset(), (long)getpid(), (long)child, code);
+        } else {
+            printf("%s[ERROR]%s Parent (PID: %ld) <- Child (PID: %ld) that bai, exit=%d.\n",
+                   ui_color_red(), ui_color_reset(), (long)getpid(), (long)child, code);
+        }
         (void)logger_info("Parent thu duoc exit=%d tu child pid=%ld", code, (long)child);
         return 0;
     }
@@ -63,7 +71,8 @@ int process_run_child(const char *label, task_callback_fn task,
         result->kind = PROCESS_RESULT_SIGNALED;
         result->exit_code = 0;
         result->terminating_signal = WTERMSIG(status);
-        printf("[Parent %ld] Child %ld bi ket thuc boi signal %d.\n", (long)getpid(), (long)child, WTERMSIG(status));
+        printf("%s[SIGNAL]%s Parent (PID: %ld) <- Child (PID: %ld) bi ket thuc boi signal %d.\n",
+               ui_color_cyan(), ui_color_reset(), (long)getpid(), (long)child, WTERMSIG(status));
         (void)logger_error("Child pid=%ld bi ket thuc boi signal %d", (long)child, WTERMSIG(status));
         return 0;
     }

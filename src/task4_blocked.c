@@ -1,5 +1,6 @@
 #include "task4_blocked.h"
 #include "logger.h"
+#include "ui_theme.h"
 
 #include <errno.h>
 #include <signal.h>
@@ -144,9 +145,10 @@ int task4_blocked_demo(void)
     struct sigaction orig_act_usr2;
 
     puts("");
-    puts("==================================================");
-    puts("   BAT DAU TASK 4: BLOCKED AND UNBLOCKED SIGNALS  ");
-    puts("==================================================");
+    puts("==========================================================================");
+    printf("        %s%sBAT DAU TASK 4: BLOCKED AND UNBLOCKED SIGNALS%s               \n",
+           ui_color_bold(), ui_color_cyan(), ui_color_reset());
+    puts("==========================================================================");
     fflush(stdout);
 
     /*
@@ -241,7 +243,8 @@ int task4_blocked_demo(void)
         ret_code = -1;
         goto cleanup;
     }
-    printf("  -> Xac nhan: SIGUSR1 da duoc dua vao signal mask (is_member=%d).\n", is_blocked);
+    printf("  -> Xac nhan: SIGUSR1 da duoc dua vao signal mask (%s[BLOCKED]%s, is_member=%d).\n",
+           ui_color_yellow(), ui_color_reset(), is_blocked);
 
     /* Reset handler count */
     g_usr1_handled_count = 0;
@@ -281,7 +284,8 @@ int task4_blocked_demo(void)
         ret_code = -1;
         goto cleanup;
     }
-    printf("  -> Kiem tra sigpending(): SIGUSR1 DANG O TRANG THAI PENDING (is_member=%d)!\n", is_pending);
+    printf("  -> Kiem tra sigpending(): SIGUSR1 DANG O TRANG THAI %s[PENDING]%s (is_member=%d)!\n",
+           ui_color_magenta(), ui_color_reset(), is_pending);
 
     /* 6. Verify handler has not executed yet */
     printf("  -> Kiem tra co handler khi bi block: g_usr1_handled_count = %d\n", (int)g_usr1_handled_count);
@@ -303,7 +307,8 @@ int task4_blocked_demo(void)
     }
 
     /* 8. Verify handler ran and check coalescing */
-    printf("  -> Kiem tra co handler sau khi unblock: g_usr1_handled_count = %d\n", (int)g_usr1_handled_count);
+    printf("  -> Kiem tra co handler sau khi unblock: %s[HANDLED]%s (g_usr1_handled_count = %d)\n",
+           ui_color_green(), ui_color_reset(), (int)g_usr1_handled_count);
     if (g_usr1_handled_count == 0) {
         fprintf(stderr, "Loi: Handler khong duoc thuc thi sau khi unblock!\n");
         ret_code = -1;
@@ -358,7 +363,8 @@ int task4_blocked_demo(void)
         ret_code = -1;
         goto cleanup;
     }
-    printf("  -> Xac nhan: SIGUSR2 dang KHONG BI BLOCK (is_member=%d).\n", usr2_blocked);
+    printf("  -> Xac nhan: SIGUSR2 dang %s[UNBLOCKED]%s (is_member=%d).\n",
+           ui_color_cyan(), ui_color_reset(), usr2_blocked);
 
     /* 2. Register handler for SIGUSR2 */
     struct sigaction act2;
@@ -390,7 +396,8 @@ int task4_blocked_demo(void)
     }
 
     /* 4. Verify handler executed immediately */
-    printf("  -> Kiem tra co handler ngay sau kill(): g_usr2_handled_count = %d\n", (int)g_usr2_handled_count);
+    printf("  -> Kiem tra co handler ngay sau kill(): %s[HANDLED]%s (g_usr2_handled_count = %d)\n",
+           ui_color_green(), ui_color_reset(), (int)g_usr2_handled_count);
     if (g_usr2_handled_count != 1) {
         fprintf(stderr, "Loi: Handler cua SIGUSR2 khong duoc thuc thi ngay lap tuc!\n");
         ret_code = -1;

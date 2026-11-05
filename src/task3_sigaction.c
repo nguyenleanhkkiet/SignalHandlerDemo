@@ -1,5 +1,6 @@
 #include "task3_sigaction.h"
 #include "logger.h"
+#include "ui_theme.h"
 
 #include <errno.h>
 #include <limits.h>
@@ -904,9 +905,11 @@ static void explain_sigaction_comparison(void)
  */
 int task3_sigaction_demo(void)
 {
-    puts("\n==================================================");
-    puts("   BAT DAU TASK 3: ADVANCED SIGNAL (sigaction)   ");
-    puts("==================================================");
+    puts("");
+    puts("==========================================================================");
+    printf("        %s%sBAT DAU TASK 3: ADVANCED SIGNAL (sigaction)%s                 \n",
+           ui_color_bold(), ui_color_cyan(), ui_color_reset());
+    puts("==========================================================================");
     fflush(stdout);
 
     /*
