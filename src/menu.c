@@ -57,6 +57,10 @@ int menu_run(void)
 
         int input_status = read_choice(&choice);
         if (input_status == 0) return 0;
+        if (!isatty(STDIN_FILENO)) {
+            putchar('\n');
+            fflush(stdout);
+        }
         if (input_status < 0) {
             printf("\n%s[WARNING]%s Vui long nhap mot so hop le (tu 0 den 4).\n",
                    ui_color_yellow(), ui_color_reset());

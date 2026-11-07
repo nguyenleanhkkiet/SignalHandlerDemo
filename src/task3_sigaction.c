@@ -873,28 +873,24 @@ static void explain_sigaction_comparison(void)
 {
     puts("\n--------------------------------------------------");
     puts("[Phan 4] Bang so sanh truc quan giua signal() va sigaction()");
-    puts("+---------------------+---------------------------------+---------------------------------+");
-    puts("| Tieu chi            | signal()                        | sigaction() (POSIX.1-2008)      |");
-    puts("+---------------------+---------------------------------+---------------------------------+");
-    puts("| 1. Cau truc API     | Don gian: truyen con tro ham    | Struct sigaction linh hoat      |");
-    puts("|                     | void (*)(int)                   | (sa_handler / sa_sigaction)     |");
-    puts("+---------------------+---------------------------------+---------------------------------+");
-    puts("| 2. Mat na tin hieu  | Khong ho tro                    | sa_mask (sigset_t): chan tin    |");
-    puts("|    (sa_mask)        | Nguy co bi ngat chong cheo      | hieu tuy bien trong khi handler |");
-    puts("|                     | (nested signal interruption)    | dang chay de tranh race condition|");
-    puts("+---------------------+---------------------------------+---------------------------------+");
-    puts("| 3. Ngu canh tin hieu| Chi co so hieu: int signo       | Co SA_SIGINFO va siginfo_t:     |");
-    puts("|    (Context Info)   | Khong biet PID/UID cua ben gui  | Cung cap si_pid, si_uid, si_code|");
-    puts("|                     |                                 | dia chi loi bo nho (si_addr)... |");
-    puts("+---------------------+---------------------------------+---------------------------------+");
-    puts("| 4. Khoi dong lai    | Khong kiem soat duoc            | Co SA_RESTART: chu dong chon    |");
-    puts("|    syscall bi ngat  | (Phu thuoc cai dat he thong)    | tu dong restart syscall hoac    |");
-    puts("|    (Restartability) |                                 | tra ve -1 kem errno == EINTR    |");
-    puts("+---------------------+---------------------------------+---------------------------------+");
-    puts("| 5. Tinh nhat quan   | System V: tu reset ve SIG_DFL   | POSIX tieu chuan hoa hoan toan  |");
-    puts("|    va di dong       | BSD: giu nguyen handler         | Hanh vi ro rang, nhat quan tren |");
-    puts("|    (Portability)    | POSIX coi la implementation-def | moi ban phan phoi UNIX / Linux  |");
-    puts("+---------------------+---------------------------------+---------------------------------+");
+    puts("+----------------+------------------------+------------------------------+");
+    puts("| Tieu chi       | signal()               | sigaction() (POSIX)          |");
+    puts("+----------------+------------------------+------------------------------+");
+    puts("| 1. Cau truc    | Truyen con tro ham     | Struct sigaction linh hoat   |");
+    puts("|    API         | void (*)(int)          | (sa_handler / sa_sigaction)  |");
+    puts("+----------------+------------------------+------------------------------+");
+    puts("| 2. Mat na      | Khong ho tro; de bi    | Co sa_mask: chan signal tuy  |");
+    puts("|    tin hieu    | ngat chong cheo        | bien khi handler dang chay   |");
+    puts("+----------------+------------------------+------------------------------+");
+    puts("| 3. Ngu canh    | Chi co int signo       | Co SA_SIGINFO va siginfo_t:  |");
+    puts("|    tin hieu    | Khong biet PID/UID gui | Biet ro si_pid, si_uid, code ||");
+    puts("+----------------+------------------------+------------------------------+");
+    puts("| 4. Khoi dong   | Khong kiem soat duoc   | Co SA_RESTART: chu dong chon |");
+    puts("|    lai syscall | (phu thuoc he thong)   | tu dong restart hoac EINTR   |");
+    puts("+----------------+------------------------+------------------------------+");
+    puts("| 5. Tinh        | System V reset ve DFL; | POSIX tieu chuan hoa; hanh vi|");
+    puts("|    nhat quan   | BSD giu nguyen handler | nhat quan tren moi Linux/UNIX|");
+    puts("+----------------+------------------------+------------------------------+");
     fflush(stdout);
 }
 
