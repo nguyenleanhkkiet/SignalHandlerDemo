@@ -1,0 +1,6 @@
+
+# Generated build files
+/build/
+
+# Runtime log
+/app.log
